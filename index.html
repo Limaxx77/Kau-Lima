@@ -1,259 +1,576 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kauã Lima | Soluções Digitais</title>
+  <script>document.documentElement.classList.replace("no-js", "js");</script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Kauã Lima | Desenvolvedor Web &amp; CEO da Ominy</title>
+  <meta name="description" content="Conheça Kauã Lima, desenvolvedor web, estudante de Análise e Desenvolvimento de Sistemas e CEO da Ominy Desenvolvimentos. Projetos, tecnologia, inovação e soluções digitais." />
+  <meta name="author" content="Kauã Lima" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#000000" />
+
+  <!-- Open Graph / redes sociais. Ao publicar, troque as imagens por URLs absolutas do seu domínio. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:title" content="Kauã Lima | Desenvolvedor Web &amp; CEO da Ominy" />
+  <meta property="og:description" content="Desenvolvedor web, estudante de ADS e CEO da Ominy Desenvolvimentos. Transformando ideias em experiências digitais." />
+  <meta property="og:image" content="assets/img/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kauã Lima | Desenvolvedor Web &amp; CEO da Ominy" />
+  <meta name="twitter:description" content="Transformando ideias em experiências digitais." />
+  <meta name="twitter:image" content="assets/img/og-image.jpg" />
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kauã Lima",
+    "jobTitle": "Desenvolvedor Web e CEO da Ominy Desenvolvimentos",
+    "description": "Desenvolvedor web, estudante de Análise e Desenvolvimento de Sistemas e CEO da Ominy Desenvolvimentos.",
+    "sameAs": ["https://github.com/Limaxx77"],
+    "knowsAbout": ["Desenvolvimento Web", "JavaScript", "Node.js", "Python", "PostgreSQL", "Automações", "Integrações com APIs"],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Ominy Desenvolvimentos",
+      "url": "https://ominydesenvolvimentos.com",
+      "sameAs": ["https://www.instagram.com/ominy.dev/"]
+    }
+  }
+  </script>
 </head>
 <body>
 
-  <header class="header">
-    <a href="#" class="brand">
-      <span class="brand-mark">KL</span>
-      <span>KAUÃ LIMA</span>
+  <!-- ================= LOADER ================= -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__mark">
+      <span class="loader__letter">K</span><span class="loader__letter">L</span>
+    </div>
+    <div class="loader__bar"><span id="loaderBar"></span></div>
+    <span class="loader__count mono" id="loaderCount">000</span>
+  </div>
+
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header" id="header">
+    <a href="#inicio" class="brand" id="brand" aria-label="Kauã Lima — voltar ao início">
+      <span class="brand__mark">KL</span>
+      <span class="brand__name">KAUÃ LIMA</span>
     </a>
 
-    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav class="nav" id="nav">
-      <a href="#inicio">INÍCIO</a>
-      <a href="#sobre">SOBRE</a>
-      <a href="#servicos">SERVIÇOS</a>
-      <a href="#projetos">PROJETOS</a>
-      <a href="#contato">CONTATO</a>
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="#sobre" data-nav>Sobre</a>
+      <a href="#ominy" data-nav>Ominy</a>
+      <a href="#projetos" data-nav>Projetos</a>
+      <a href="#formacao" data-nav>Formação</a>
+      <a href="#contato" data-nav>Contato</a>
     </nav>
 
-    <a class="btn btn-outline top-btn" href="https://wa.me/5587981076022" target="_blank">
-      VAMOS CONVERSAR <span>◉</span>
+    <a class="btn btn--ghost btn--sm header__cta magnetic" href="https://wa.me/5565999244629" target="_blank" rel="noopener">
+      <span class="status-dot" aria-hidden="true"></span> Vamos conversar
     </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span>
+    </button>
   </header>
 
-  <main>
-    <section class="hero" id="inicio">
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav aria-label="Menu mobile">
+      <a href="#sobre"><span class="mono">01</span>Sobre</a>
+      <a href="#ominy"><span class="mono">02</span>Ominy</a>
+      <a href="#projetos"><span class="mono">03</span>Projetos</a>
+      <a href="#formacao"><span class="mono">04</span>Formação</a>
+      <a href="#contato"><span class="mono">05</span>Contato</a>
+    </nav>
+    <div class="mobile-menu__foot">
+      <a href="https://wa.me/5565999244629" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://www.instagram.com/ominy.dev/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://github.com/Limaxx77" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
 
-      <video class="hero-video" autoplay muted loop playsinline>
-        <source src="assets/videosite.mp4" type="video/mp4">
-      </video>
+  <main id="conteudo">
 
-      <div class="hero-overlay"></div>
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__grid" aria-hidden="true"></div>
 
-      <div class="hero-content reveal">
-        <p class="eyebrow">DESENVOLVIMENTO • TECNOLOGIA • RESULTADOS</p>
-
-        <h1>
-          Transformo ideias<br>
-          em soluções digitais<br>
-          inteligentes.
-        </h1>
-
-        <p class="hero-text">
-          Desenvolvimento de sistemas, sites e automações com tecnologia de ponta,
-          foco em performance, segurança e experiência do usuário.
+      <div class="hero__inner">
+        <p class="eyebrow mono hero__eyebrow" data-hero-fade>
+          <span class="eyebrow__line"></span> Portfólio — 2026
         </p>
 
-        <div class="hero-actions">
-          <a href="#projetos" class="btn btn-light">VER PROJETOS <span>→</span></a>
-          <a href="https://wa.me/5587981076022" target="_blank" class="btn btn-outline">
-            VAMOS CONVERSAR <span>◉</span>
+        <h1 class="hero__title" id="hero-title">
+          <span class="hero__line" data-split>KAUÃ</span>
+          <span class="hero__line hero__line--outline" data-split>LIMA</span>
+        </h1>
+
+        <p class="hero__subtitle" data-hero-fade>
+          <span>Desenvolvedor Web</span> <i aria-hidden="true">|</i> <span>CEO da Ominy</span> <i aria-hidden="true">|</i> <span>Estudante de Análise e Desenvolvimento de Sistemas</span>
+        </p>
+
+        <div class="hero__rotator" data-hero-fade aria-live="polite">
+          <span class="mono">&gt;</span>
+          <span class="rotator" id="rotator">Desenvolvedor Web</span><span class="caret" aria-hidden="true"></span>
+        </div>
+
+        <blockquote class="hero__quote" data-hero-fade>“Transformando ideias em experiências digitais.”</blockquote>
+
+        <div class="hero__actions" data-hero-fade>
+          <a href="#projetos" class="btn btn--light magnetic">
+            Conheça meus projetos <span class="btn__arrow" aria-hidden="true">→</span>
           </a>
+          <a href="#contato" class="btn btn--ghost magnetic">Entre em contato</a>
+        </div>
+      </div>
+
+      <div class="hero__meta mono" data-hero-fade aria-hidden="true">
+        <span>Dev Web</span>
+        <span>CEO @ Ominy</span>
+        <span>ADS — fase final</span>
+      </div>
+    </section>
+
+    <!-- ================= MANIFESTO ================= -->
+    <div class="manifesto" aria-label="Ideia, código e produto">
+      <p class="manifesto__line" data-drift="-6"><span class="manifesto__word" data-fill>Ideia</span></p>
+      <p class="manifesto__line manifesto__line--mid" data-drift="4"><i aria-hidden="true">→</i><span class="manifesto__word" data-fill>Código</span></p>
+      <p class="manifesto__line manifesto__line--end" data-drift="-4"><i aria-hidden="true">→</i><span class="manifesto__word" data-fill>Produto</span></p>
+    </div>
+
+    <!-- ================= SOBRE ================= -->
+    <section class="section about" id="sobre" aria-labelledby="sobre-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow mono" data-reveal><span class="eyebrow__num">01</span> Sobre mim</p>
+          <h2 class="section-title" id="sobre-title" data-split-words>Prazer, eu sou o Kauã.</h2>
+        </header>
+
+        <div class="about__grid">
+          <figure class="about__photo" data-tilt>
+            <div class="about__photo-inner" data-parallax="-8">
+              <img src="assets/img/kaua.webp" width="900" height="1200" loading="lazy" decoding="async"
+                   alt="Kauã Lima de perfil, observando a cidade e o mar de uma varanda">
+            </div>
+            <figcaption class="mono">KL — dev &amp; founder</figcaption>
+          </figure>
+
+          <div class="about__text">
+            <p class="about__lead" data-highlight>
+              Sou desenvolvedor web, empreendedor e <mark>CEO da Ominy Desenvolvimentos</mark>, uma empresa que cria soluções tecnológicas para negócios. Gosto de pegar uma ideia solta e <mark>transformar em projeto real</mark>.
+            </p>
+
+            <div class="about__body" data-reveal>
+              <p>
+                Estou na fase final da graduação em <strong>Análise e Desenvolvimento de Sistemas</strong>. Minha trajetória
+                sempre girou em torno de tecnologia, inovação, desenvolvimento de sistemas e empreendedorismo — e foi
+                essa mistura que me levou a fundar a Ominy.
+              </p>
+              <p>
+                O que me move é resolver problemas do dia a dia com código e explorar tecnologias novas sempre que posso.
+                Acredito que <strong>disciplina, criatividade e determinação</strong> fazem toda a diferença em qualquer projeto.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div class="stats">
-          <div><span>▣</span><strong>10+</strong><small>Projetos<br>Entregues</small></div>
-          <div><span>♙</span><strong>2</strong><small>Anos de<br>Experiência</small></div>
-          <div><span>♡</span><strong>100%</strong><small>Compromisso com<br>Qualidade</small></div>
-          <div><span>◷</span><strong>24/7</strong><small>Suporte e<br>Manutenção</small></div>
+        <ul class="pillars" role="list">
+          <li class="pillar card" data-tilt data-reveal>
+            <span class="pillar__icon mono" aria-hidden="true">&lt;/&gt;</span>
+            <h3>Desenvolvimento</h3>
+            <p>Sites, sistemas e automações pensados para funcionar de verdade — rápidos, claros e bem construídos.</p>
+          </li>
+          <li class="pillar card" data-tilt data-reveal>
+            <span class="pillar__icon mono" aria-hidden="true">↗</span>
+            <h3>Empreendedorismo</h3>
+            <p>À frente da Ominy, do planejamento à entrega: entender o negócio do cliente vem antes da primeira linha de código.</p>
+          </li>
+          <li class="pillar card" data-tilt data-reveal>
+            <span class="pillar__icon mono" aria-hidden="true">◎</span>
+            <h3>Disciplina</h3>
+            <p>Constância acima de tudo: evoluir um pouco todo dia é o que constrói resultado de verdade.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= OMINY ================= -->
+    <section class="ominy" id="ominy" aria-labelledby="ominy-title">
+      <div class="ominy__stage">
+        <div class="ominy__glow" aria-hidden="true"></div>
+        <div class="ominy__orb" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <p class="eyebrow mono ominy__eyebrow"><span class="eyebrow__num">02</span> CEO &amp; Fundador</p>
+        <h2 class="ominy__logo" id="ominy-title">
+          <span class="ominy__symbol-wrap"><img class="ominy__symbol" src="assets/img/ominy-simbolo.png" width="351" height="193" alt=""></span>
+          <img class="ominy__wordmark" src="assets/img/ominy-wordmark.png" width="552" height="176" alt="Ominy">
+        </h2>
+        <p class="ominy__tag mono">Desenvolvimentos</p>
+      </div>
+
+      <div class="container ominy__content">
+        <div class="ominy__intro">
+          <div class="ominy__text" data-reveal>
+            <p class="ominy__role mono"><span class="status-dot" aria-hidden="true"></span> Kauã Lima — CEO &amp; Fundador</p>
+            <p class="ominy__desc">
+              A Ominy é uma empresa de tecnologia focada no desenvolvimento de <strong>soluções digitais, sites profissionais,
+              sistemas personalizados e automações</strong> que ajudam empresas a modernizar processos, melhorar sua presença
+              digital e aumentar sua eficiência.
+            </p>
+            <p class="ominy__sub">
+              Como CEO, atuo na criação de soluções, no planejamento de projetos, no desenvolvimento tecnológico e no
+              relacionamento com clientes.
+            </p>
+
+            <div class="ominy__actions">
+              <a href="https://ominydesenvolvimentos.com" target="_blank" rel="noopener" class="btn btn--light magnetic">
+                Conhecer a Ominy <span class="btn__arrow" aria-hidden="true">↗</span>
+              </a>
+              <a href="https://www.instagram.com/ominy.dev/" target="_blank" rel="noopener" class="btn btn--ghost magnetic">
+                <svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg> Instagram da Ominy
+              </a>
+              <a href="https://wa.me/5565999244629" target="_blank" rel="noopener" class="btn btn--ghost magnetic">
+                <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg> Conversar pelo WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <figure class="ominy__art" data-tilt data-reveal>
+            <img src="assets/img/kaua-escritorio.webp" width="800" height="1563" loading="lazy" decoding="async"
+                 alt="Kauã Lima trabalhando no escritório, em frente ao computador">
+            <figcaption class="mono">CEO @ Ominy</figcaption>
+          </figure>
+        </div>
+
+        <h3 class="ominy__services-title mono" data-reveal>O que a Ominy entrega</h3>
+        <ol class="services" role="list">
+          <li class="service card" data-reveal><span class="mono">01</span><h4>Sites institucionais</h4></li>
+          <li class="service card" data-reveal><span class="mono">02</span><h4>Landing pages profissionais</h4></li>
+          <li class="service card" data-reveal><span class="mono">03</span><h4>Sistemas web personalizados</h4></li>
+          <li class="service card" data-reveal><span class="mono">04</span><h4>Sistemas de gestão empresarial</h4></li>
+          <li class="service card" data-reveal><span class="mono">05</span><h4>Automações de processos</h4></li>
+          <li class="service card" data-reveal><span class="mono">06</span><h4>Integrações com APIs</h4></li>
+          <li class="service card" data-reveal><span class="mono">07</span><h4>Relatórios e análise de dados</h4></li>
+          <li class="service card" data-reveal><span class="mono">08</span><h4>Soluções digitais para empresas</h4></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= PROJETOS ================= -->
+    <section class="section projects" id="projetos" aria-labelledby="projetos-title">
+      <div class="container">
+        <header class="section-head section-head--split">
+          <div>
+            <p class="eyebrow mono" data-reveal><span class="eyebrow__num">03</span> Projetos</p>
+            <h2 class="section-title" id="projetos-title" data-split-words>Ideias que viraram projeto.</h2>
+          </div>
+          <div class="filters" role="group" aria-label="Filtrar projetos por status" data-reveal>
+            <button class="filter is-active" data-filter="all" aria-pressed="true">Todos</button>
+            <button class="filter" data-filter="publicado" aria-pressed="false">Publicados</button>
+            <button class="filter" data-filter="conceito" aria-pressed="false">Conceitos</button>
+          </div>
+        </header>
+
+        <!--
+          Cada projeto: data-status = publicado | desenvolvimento | conceito.
+          O conteúdo de .project__more é exibido na visualização ampliada (modal).
+        -->
+        <div class="project-grid" id="projectGrid">
+
+          <article class="project card" data-status="publicado" data-tilt tabindex="0" aria-labelledby="p-ominy">
+            <div class="project__media project__media--logo">
+              <img src="assets/img/ominy-logo.png" width="860" height="196" loading="lazy" decoding="async" alt="Logo da Ominy Desenvolvimentos">
+            </div>
+            <div class="project__body">
+              <span class="badge badge--publicado">Publicado</span>
+              <h3 id="p-ominy">Ominy Desenvolvimentos</h3>
+              <p>Site institucional da empresa, com identidade tecnológica, animações modernas e apresentação dos serviços.</p>
+              <ul class="tags" role="list"><li>Site institucional</li><li>Animações</li><li>Identidade</li></ul>
+            </div>
+            <div class="project__more" hidden>
+              <p>Site oficial da Ominy, criado para apresentar a empresa e seus serviços com uma identidade visual tecnológica e animações modernas.</p>
+              <a class="btn btn--light" href="https://ominydesenvolvimentos.com" target="_blank" rel="noopener">Visitar site <span class="btn__arrow" aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="project card" data-status="publicado" data-tilt tabindex="0" aria-labelledby="p-40graus">
+            <div class="project__media">
+              <img src="assets/img/40graus.webp" width="1400" height="737" loading="lazy" decoding="async" alt="Página inicial do site do Restaurante e Pizzaria 40 Graus">
+            </div>
+            <div class="project__body">
+              <span class="badge badge--publicado">Publicado</span>
+              <h3 id="p-40graus">Restaurante e Pizzaria 40 Graus</h3>
+              <p>Site institucional e soluções digitais de gestão, com foco em organização financeira e processos administrativos.</p>
+              <ul class="tags" role="list"><li>Site institucional</li><li>Gestão</li><li>Financeiro</li></ul>
+            </div>
+            <div class="project__more" hidden>
+              <p>Desenvolvimento de site institucional e soluções digitais de gestão para o restaurante, com foco em organização financeira, controle de informações e melhoria dos processos administrativos.</p>
+              <a class="btn btn--light" href="https://40grausrestaurante.vercel.app/" target="_blank" rel="noopener">Visitar site <span class="btn__arrow" aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="project card" data-status="publicado" data-tilt tabindex="0" aria-labelledby="p-diogo">
+            <div class="project__media project__media--logo project__media--flat" style="--logo-bg: #000">
+              <img src="assets/img/diogo-fernandes.png" width="287" height="82" loading="lazy" decoding="async" alt="Logo de Diogo Fernandes Advocacia">
+            </div>
+            <div class="project__body">
+              <span class="badge badge--publicado">Publicado</span>
+              <h3 id="p-diogo">Diogo Fernandes Advocacia</h3>
+              <p>Site institucional para o escritório do advogado Dr. Diogo Fernandes.</p>
+              <ul class="tags" role="list"><li>Site institucional</li><li>Advocacia</li></ul>
+            </div>
+            <div class="project__more" hidden>
+              <p>Site institucional desenvolvido para o escritório de advocacia do Dr. Diogo Fernandes, apresentando o profissional e sua atuação com uma identidade sóbria e elegante.</p>
+              <a class="btn btn--light" href="https://diogofernandes.com/" target="_blank" rel="noopener">Visitar site <span class="btn__arrow" aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="project card" data-status="conceito" data-tilt tabindex="0" aria-labelledby="p-radar">
+            <div class="project__media project__media--logo project__media--flat" style="--logo-bg: #002b12">
+              <img src="assets/img/radar-bioma.png" width="259" height="94" loading="lazy" decoding="async" alt="Logo do Radar Bioma">
+            </div>
+            <div class="project__body">
+              <span class="badge badge--conceito">Conceito</span>
+              <h3 id="p-radar">Radar Bioma</h3>
+              <p>Sistema para monitoramento de informações ambientais, organização de dados, acompanhamento de processos e alertas.</p>
+              <ul class="tags" role="list"><li>Monitoramento</li><li>Dados</li><li>Alertas</li></ul>
+            </div>
+            <div class="project__more" hidden>
+              <p>Projeto de sistema para monitoramento de informações ambientais, com organização de dados, acompanhamento de processos e geração de alertas.</p>
+            </div>
+          </article>
+
+          <article class="project card" data-status="publicado" data-tilt tabindex="0" aria-labelledby="p-leo">
+            <div class="project__media project__media--logo project__media--round">
+              <img src="assets/img/leo-clube.png" width="150" height="150" loading="lazy" decoding="async" alt="Logo do LEO Clube Cuiabá Boa Esperança">
+            </div>
+            <div class="project__body">
+              <span class="badge badge--publicado">Publicado</span>
+              <h3 id="p-leo">LÉO Clube Boa Esperança</h3>
+              <p>Site institucional para um projeto social, valorizando suas ações, identidade e presença digital.</p>
+              <ul class="tags" role="list"><li>Site institucional</li><li>Projeto social</li></ul>
+            </div>
+            <div class="project__more" hidden>
+              <p>Desenvolvimento de site institucional para o LÉO Clube Boa Esperança, valorizando as ações do projeto social, sua identidade e sua presença digital.</p>
+              <a class="btn btn--light" href="https://www.xn--leoclubeboaesperana-nyb.com/" target="_blank" rel="noopener">Visitar site <span class="btn__arrow" aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="project card" data-status="publicado" data-tilt tabindex="0" aria-labelledby="p-artista">
+            <div class="project__media">
+              <img src="assets/img/projeto-artista.webp" width="900" height="1221" loading="lazy" decoding="async" alt="Site do artista MC Kaelzinho aberto em um monitor e em um celular">
+            </div>
+            <div class="project__body">
+              <span class="badge badge--publicado">Publicado</span>
+              <h3 id="p-artista">Site para artista — MC Kaelzinho</h3>
+              <p>Site oficial para artista musical, responsivo e com visual alinhado à identidade do artista.</p>
+              <ul class="tags" role="list"><li>Site oficial</li><li>Responsivo</li></ul>
+            </div>
+            <div class="project__more" hidden>
+              <p>Site oficial para artista musical, com seções de músicas, agenda e contato, pensado para funcionar bem tanto no desktop quanto no celular.</p>
+            </div>
+          </article>
+
+          <article class="project project--more card" data-status="all" aria-labelledby="p-outros">
+            <div class="project__body">
+              <span class="badge">Outros projetos</span>
+              <h3 id="p-outros">Sites, landing pages e sistemas.</h3>
+              <p>Além destes, desenvolvo projetos para artistas, empresas e comércios. Quer ver mais ou tirar uma ideia do papel?</p>
+              <a class="btn btn--light magnetic" href="https://wa.me/5565999244629" target="_blank" rel="noopener">Bora conversar <span class="btn__arrow" aria-hidden="true">→</span></a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="panel reveal" id="sobre">
-      <div class="about">
-        <img src="assets/Group 22 (1).png" alt="Kauã Lima" class="profile-img">
+    <!-- ================= FORMAÇÃO ================= -->
+    <section class="section education" id="formacao" aria-labelledby="formacao-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow mono" data-reveal><span class="eyebrow__num">04</span> Formação acadêmica</p>
+          <h2 class="section-title" id="formacao-title" data-split-words>Teoria que vira prática.</h2>
+        </header>
 
-        <div class="about-text">
-          <p class="eyebrow">SOBRE MIM</p>
-          <h2>CEO da Ominy.</h2>
-
-          <p>
-            Desenvolvedor e estrategista digital apaixonado por criar soluções
-            tecnológicas que impulsionam negócios e geram resultados reais.
-          </p>
-
-          <ul>
-            <li>Foco em resultado e experiência do usuário</li>
-            <li>Código limpo, seguro e escalável</li>
-            <li>Soluções personalizadas para cada negócio</li>
-            <li>Compromisso com prazos e qualidade</li>
-          </ul>
-
-          <a href="https://wa.me/5587981076022" target="_blank" class="btn btn-outline">
-            VAMOS CONVERSAR <span>◉</span>
-          </a>
-        </div>
-
-        <aside class="info-card">
-          <div><span>♙</span><p><b>Nome</b>Kauã Lima</p></div>
-          <div><span>♡</span><p><b>Cargo</b>CEO da Ominy</p></div>
-          <div><span>◈</span><p><b>Especialidade</b>Landing pages e sistemas</p></div>
-          <div><span>▣</span><p><b>Disponibilidade</b>Projetos Freelance e Parcerias</p></div>
-        </aside>
-      </div>
-
-      <div class="services" id="servicos">
-        <div class="section-title">
-          <div>
-            <p class="eyebrow">SERVIÇOS E SOLUÇÕES</p>
-            <h2>Tecnologia que impulsiona o seu negócio</h2>
+        <div class="edu">
+          <div class="edu__card card" data-reveal data-tilt>
+            <span class="mono edu__label">Graduação</span>
+            <h3>Análise e Desenvolvimento de Sistemas</h3>
+            <p class="edu__status"><span class="status-dot" aria-hidden="true"></span> Em fase de conclusão</p>
+            <p>Uma formação que me deu base sólida em lógica, engenharia de software e banco de dados — e que aplico diretamente nos projetos da Ominy.</p>
           </div>
-          <span></span>
-        </div>
 
-        <div class="service-grid">
-          <article><i>▣</i><h3>Desenvolvimento Web</h3><p>Sites institucionais, landing pages e aplicações web modernas.</p></article>
-          <article><i>▦</i><h3>Sistemas Personalizados</h3><p>Soluções para automatizar processos do seu negócio.</p></article>
-          <article><i>⌬</i><h3>APIs e Integrações</h3><p>Integração entre sistemas e APIs RESTful.</p></article>
-          <article><i>⌘</i><h3>Automações e Bots</h3><p>Automatização de tarefas com scripts, bots e IA.</p></article>
-          <article><i>◌</i><h3>Manutenção e Suporte</h3><p>Suporte técnico e melhorias contínuas.</p></article>
+          <div class="timeline">
+          <span class="timeline__line" aria-hidden="true"><span></span></span>
+          <ol class="timeline__list" role="list">
+            <li class="timeline__item" data-reveal>
+              <span class="timeline__dot" aria-hidden="true"></span>
+              <span class="mono">Etapa 01</span>
+              <h3>Fundamentos</h3>
+              <p>Lógica de programação, algoritmos e estruturas de dados: a base de tudo o que veio depois.</p>
+            </li>
+            <li class="timeline__item" data-reveal>
+              <span class="timeline__dot" aria-hidden="true"></span>
+              <span class="mono">Etapa 02</span>
+              <h3>Web &amp; banco de dados</h3>
+              <p>HTML, CSS, JavaScript, modelagem de dados e SQL — o momento em que as ideias começaram a ganhar forma na tela.</p>
+            </li>
+            <li class="timeline__item" data-reveal>
+              <span class="timeline__dot" aria-hidden="true"></span>
+              <span class="mono">Etapa 03</span>
+              <h3>Sistemas de verdade</h3>
+              <p>Back-end, APIs e projetos como o Radar Bioma, ligando o conteúdo do curso a problemas reais.</p>
+            </li>
+            <li class="timeline__item" data-reveal>
+              <span class="timeline__dot" aria-hidden="true"></span>
+              <span class="mono">Etapa 04</span>
+              <h3>Do curso para o mercado</h3>
+              <p>A Ominy nasce como o lugar onde o conhecimento acadêmico vira solução para empresas.</p>
+            </li>
+            <li class="timeline__item timeline__item--now" data-reveal>
+              <span class="timeline__dot" aria-hidden="true"></span>
+              <span class="mono">Agora</span>
+              <h3>Reta final</h3>
+              <p>Concluindo a graduação enquanto sigo estudando, construindo e evoluindo como desenvolvedor.</p>
+            </li>
+          </ol>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="projects reveal" id="projetos">
-      <div class="section-title">
-        <div>
-          <p class="eyebrow">PROJETOS RECENTES</p>
-          <h2>Alguns projetos que desenvolvi</h2>
-        </div>
-        <span></span>
+    <!-- ================= CONTATO ================= -->
+    <section class="contact" id="contato" aria-labelledby="contato-title">
+      <div class="container">
+        <p class="eyebrow mono" data-reveal><span class="eyebrow__num">05</span> Contato</p>
+        <h2 class="contact__title" id="contato-title">
+          <span class="contact__line" data-split-words>Tem uma ideia?</span>
+          <span class="contact__line contact__line--muted" data-split-words>Vamos transformá-la em realidade.</span>
+        </h2>
+
+        <a href="https://wa.me/5565999244629" target="_blank" rel="noopener" class="contact__big magnetic">
+          <span class="contact__big-label mono">WhatsApp da Ominy</span>
+          <span class="contact__big-value">(65) 99924-4629</span>
+          <span class="contact__big-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <ul class="links" role="list">
+          <li data-reveal>
+            <a class="link-card card" href="https://www.instagram.com/ominy.dev/" target="_blank" rel="noopener">
+              <svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg>
+              <span><small class="mono">Instagram</small>@ominy.dev</span>
+              <span class="link-card__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li data-reveal>
+            <a class="link-card card" href="https://ominydesenvolvimentos.com" target="_blank" rel="noopener">
+              <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>
+              <span><small class="mono">Site oficial</small>ominydesenvolvimentos.com</span>
+              <span class="link-card__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li data-reveal>
+            <a class="link-card card" href="https://github.com/Limaxx77" target="_blank" rel="noopener">
+              <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
+              <span><small class="mono">GitHub</small>Limaxx77</span>
+              <span class="link-card__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <!--
+            Espaço para outras redes profissionais (ex.: LinkedIn). Para ativar, descomente e troque a URL:
+          <li data-reveal>
+            <a class="link-card card" href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener">
+              <svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>
+              <span><small class="mono">LinkedIn</small>Kauã Lima</span>
+              <span class="link-card__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          -->
+        </ul>
       </div>
-
-      <div class="project-grid">
-        <article class="project-card">
-          <img src="assets/proj-barbearia.png" alt="Sistema para Barbearia">
-          <div>
-            <h3>Sistema para Barbearia</h3>
-            <p>Agendamento online, clientes e controle financeiro.</p>
-            <small>Next.js</small><small>Node.js</small>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <img src="assets/proj-dashboard.png" alt="Dashboard Financeiro">
-          <div>
-            <h3>Dashboard Financeiro</h3>
-            <p>Dashboard para controle financeiro e relatórios.</p>
-            <small>React</small><small>Chart.js</small>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <img src="assets/proj-saas.png" alt="Landing Page SaaS">
-          <div>
-            <h3>Landing Page SaaS</h3>
-            <p>Página moderna para alta conversão.</p>
-            <small>HTML</small><small>CSS</small>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <img src="assets/proj-admin.png" alt="Painel Administrativo">
-          <div>
-            <h3>Painel Administrativo</h3>
-            <p>Painel para gestão de usuários e pedidos.</p>
-            <small>React</small><small>Node.js</small>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="cta reveal" id="contato">
-      <div class="mail-icon">✉</div>
-      <div>
-        <h2>Vamos tirar seu projeto do papel?</h2>
-        <h3>Estou pronto para transformar sua ideia em realidade.</h3>
-        <p>Entre em contato e vamos conversar sobre como posso ajudar.</p>
-      </div>
-      <a href="https://wa.me/5587981076022" target="_blank" class="btn btn-light">
-        FALAR COMIGO <span>◉</span>
-      </a>
     </section>
   </main>
 
+  <!-- ================= FOOTER ================= -->
   <footer class="footer">
-    <div>
-      <a href="#" class="brand footer-brand">
-        <span class="brand-mark">KL</span>
-        <span>KAUÃ LIMA</span>
-      </a>
-
-      <p>Desenvolvendo soluções digitais inteligentes que geram resultados.</p>
-
-      <small>© 2026 Kauã Lima. Todos os direitos reservados.</small>
-    </div>
-
-    <div>
-      <h4>NAVEGAÇÃO</h4>
-      <a href="#inicio">Início</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#contato">Contato</a>
-    </div>
-
-    <div>
-      <h4>SERVIÇOS</h4>
-      <a>Desenvolvimento Web</a>
-      <a>Sistemas Personalizados</a>
-      <a>APIs e Integrações</a>
-      <a>Automações e Bots</a>
-    </div>
-
-    <div>
-      <h4>CONTATO</h4>
-      <p>Vamos conversar sobre seu projeto.</p>
-      <a href="https://wa.me/5587981076022" target="_blank" class="btn btn-outline">
-        VAMOS CONVERSAR <span>◉</span>
-      </a>
+    <div class="container footer__inner">
+      <p>© 2026 Kauã Lima — Desenvolvedor Web &amp; CEO da Ominy.</p>
+      <button class="footer__terminal mono" id="openTerminal" type="button">&gt;_ abrir terminal secreto</button>
+      <a href="#inicio" class="footer__top mono">Voltar ao topo ↑</a>
     </div>
   </footer>
 
-  <script>
-    const menuBtn = document.getElementById("menuBtn");
-    const nav = document.getElementById("nav");
+  <!-- ================= PROJECT DIALOG ================= -->
+  <dialog class="modal" id="projectModal" aria-labelledby="modalTitle">
+    <div class="modal__panel">
+      <button class="modal__close" type="button" data-close aria-label="Fechar">✕</button>
+      <div class="modal__media" id="modalMedia"></div>
+      <div class="modal__body">
+        <span id="modalBadge"></span>
+        <h3 id="modalTitle"></h3>
+        <ul class="tags" id="modalTags" role="list"></ul>
+        <div class="modal__text" id="modalText"></div>
+      </div>
+    </div>
+  </dialog>
 
-    menuBtn.addEventListener("click", () => {
-      nav.classList.toggle("open");
-    });
+  <!-- ================= TERMINAL (easter egg) ================= -->
+  <dialog class="terminal" id="terminal" aria-label="Terminal">
+    <div class="terminal__bar">
+      <span></span><span></span><span></span>
+      <p class="mono">kaua@ominy: ~</p>
+      <button type="button" data-close aria-label="Fechar terminal">✕</button>
+    </div>
+    <div class="terminal__out mono" id="terminalOut" aria-live="polite"></div>
+    <form class="terminal__form mono" id="terminalForm" autocomplete="off">
+      <label for="terminalInput">$</label>
+      <input id="terminalInput" type="text" spellcheck="false" aria-label="Comando" />
+    </form>
+  </dialog>
 
-    document.querySelectorAll(".nav a").forEach(link => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("open");
-      });
-    });
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-    const reveals = document.querySelectorAll(".reveal");
+  <!-- ================= ICONS ================= -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+      <rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
+      <path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4l-4.5 1.1z"/><path d="M9 8.6c.2-.4.5-.5.8-.5h.4c.2 0 .4.1.5.4l.6 1.4c.1.2 0 .5-.1.6l-.5.6c.6 1.1 1.4 1.9 2.5 2.5l.6-.5c.2-.2.4-.2.6-.1l1.4.6c.3.1.4.3.4.5v.4c0 .3-.2.6-.5.8-.6.4-1.4.5-2.1.2a8 8 0 0 1-4.7-4.7c-.3-.7-.2-1.5.1-2.2z" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+      <circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/>
+    </symbol>
+    <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/>
+    </symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4v11H3zM9.5 9.5h3.8v1.6c.6-1 1.9-1.9 3.8-1.9 3.6 0 4.4 2.3 4.4 5.4v5.9h-4v-5.2c0-1.3 0-2.9-1.8-2.9s-2.1 1.4-2.1 2.8v5.3h-4z"/>
+    </symbol>
+  </svg>
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    }, {
-      threshold: 0.15
-    });
-
-    reveals.forEach(el => observer.observe(el));
-  </script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="script.js" defer></script>
+  <script type="module" src="hero3d.js"></script>
 </body>
 </html>
